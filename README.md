@@ -25,10 +25,10 @@ cd $HOME/fabric-samples
 
 git clone https://github.com/TissuePowder/Charity-Chain.git charity_chain
 
-cd $HOME/fabric-samples/charity_chain/chaincode-javascript
+cd $HOME/fabric-samples/charity_chain/chaincode
 npm install
 
-cd $HOME/fabric-samples/charity_chain/api-javascript
+cd $HOME/fabric-samples/charity_chain/api
 npm install
 ```
 
@@ -41,23 +41,22 @@ cd $HOME/fabric-samples/test-network
 ./network.sh down && ./network.sh createChannel -ca -c mychannel -s couchdb
 
 # Deleting the existing wallet from previous test network
-rm -rf $HOME/fabric-samples/charity_chain/api-javascript/wallet
+rm -rf $HOME/fabric-samples/charity_chain/api/wallet
 
 # Install Chaincode
-./network.sh deployCC -ccn tdrive -ccp $HOME/fabric-samples/charity_chain/chaincode-javascript/ -ccl javascript
+./network.sh deployCC -ccn tdrive -ccp $HOME/fabric-samples/charity_chain/chaincode/ -ccl javascript
 ```
 
 ## Starting T-Drive API
 
 ```bash
-cd $HOME/fabric-samples/charity_chain/api-javascript
+cd $HOME/fabric-samples/charity_chain/api
 
 npm install
 
 node app.js
 ```
 
-You can test the API with the **REST CLIENT** vs code extension. The tests are written in the file **api_test.rest**.
 
 ## Viewing Blockchain State in CouchDB
 
