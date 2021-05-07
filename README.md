@@ -25,14 +25,14 @@ cd $HOME/fabric-samples
 
 git clone https://github.com/TissuePowder/Charity-Chain.git charity_chain
 
-cd $HOME/fabric-samples/charity_chain/chaincode
+cd $HOME/fabric-samples/charitychain/chaincode-javascript
 npm install
 
-cd $HOME/fabric-samples/charity_chain/api
+cd $HOME/fabric-samples/charity_chain/api-javascript
 npm install
 ```
 
-## Starting Blockchain Test Network and Install T-Drive Chaincode
+## Starting Blockchain Test Network and Install charitychain Chaincode
 
 ```bash
 cd $HOME/fabric-samples/test-network
@@ -41,16 +41,16 @@ cd $HOME/fabric-samples/test-network
 ./network.sh down && ./network.sh createChannel -ca -c mychannel -s couchdb
 
 # Deleting the existing wallet from previous test network
-rm -rf $HOME/fabric-samples/charity_chain/api/wallet
+rm -rf $HOME/fabric-samples/charitychain/api-javascript/wallet
 
 # Install Chaincode
-./network.sh deployCC -ccn tdrive -ccp $HOME/fabric-samples/charity_chain/chaincode/ -ccl javascript
+./network.sh deployCC -ccn charitychain -ccp $HOME/fabric-samples/charitychain/chaincode-javascript/ -ccl javascript
 ```
 
-## Starting T-Drive API
+## Starting charitychain API
 
 ```bash
-cd $HOME/fabric-samples/charity_chain/api
+cd $HOME/fabric-samples/charitychain/api-javascript
 
 npm install
 
