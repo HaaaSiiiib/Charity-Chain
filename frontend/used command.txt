@@ -1,0 +1,5 @@
+ 
+./network.sh down && ./network.sh createChannel -ca -c mychannel -s couchdb
+
+
+./network.sh deployCC -ccn tdrive -ccp "/home/user/fabric-samples/T-Donate/chaincode-javascript/" -ccl javascript
